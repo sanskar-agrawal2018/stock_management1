@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'first_app/css/login.css'%}">
+</head>
+<body>
+<form  class="box" method="POST">{% csrf_token %}
+    <h1>LOGIN</h1>
+    <!-- Username -->
+    <input type="text" name="username" placeholder="Username">
+    <!-- Password -->
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="LOGIN" class="btn btn-white">
+</form>
+</body>
+</html>

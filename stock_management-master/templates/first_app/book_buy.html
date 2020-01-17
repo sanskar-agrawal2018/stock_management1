@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="{% static 'first_app/css/book_buy.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="box">
+<h1>Book Buy</h1>
+<h3>Confirmed !!!</h3>
+Book Name:
+{{book_name}}
+<br>
+Description:
+{{book_descrition}}
+<br>
+Price: ₹
+{{book_price}}
+<br>
+Edition:
+{{book_edition}}
+<br>
+Publication:
+{{book_publication}}
+<br>
+<br>
+<h2>Seller Details:</h2>
+Name:
+{{user_name}}
+{{user_middle_name}}
+{{user_last_name}}
+<br>
+Hostel:
+{{user_Hostel_Type}}
+<br>
+Block:
+{{user_Block}}
+<br>
+Email:
+{{user_Email_ID}}
+<br>
+</div>
+<!-- <button><a href="/first_app/book_buy_confirmed/{{object.Book_Id}}">Buy Confirmed</a></button> -->
+</body>
+</html>

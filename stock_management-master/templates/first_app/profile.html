@@ -1,0 +1,60 @@
+{% extends 'first_app/basic.html'%}
+{% load static %}
+
+    {%block title%}Add Books{% endblock %}
+    {%block css%}
+        <link rel="stylesheet" href="{% static 'first_app/css/profile.css'%}">
+    {% endblock %}
+{% block body %}
+    <h2>Profile:</h2>
+    <br>
+    <div class="box">
+    Name:
+    {{f_name}}
+    {{m_name}}
+    {{l_name}}
+    <br>
+    Hostel Type:
+    {{Hostel_Type}}
+    <br>
+    Block:
+    {{Block}}
+    <br>
+    Email:
+    {{Email_Id}}
+    <br>
+    DOB:
+    {{DOB}}
+    <br>
+    Age:
+    {{age}}
+    </div>
+    <br><br><br>
+    <h3>Products Sold:</h3>
+    <br>
+    <div>
+        <table class="table table-dark">
+            <thead>
+                <th scope="col">Product Name</th>
+                <th scope="col">Sold to</th>
+                <th scope="col">Sold on</th>
+            </thead>
+            {% for i in x %}
+            <tr>
+                <td>{{ i.book }}</td>
+                <td>{{ i.user_name}}</td>
+                <td>{{ i.dop }}</td>
+            </tr>
+            {% endfor%}
+        </table>
+        <br><br><br>
+    </div>
+    <!-- {% for i in x %}
+        {{ i.book }}   {{ i.user}}
+    <br>
+    {% endfor %} -->
+
+    {% endblock %}
+
+</body>
+</html>

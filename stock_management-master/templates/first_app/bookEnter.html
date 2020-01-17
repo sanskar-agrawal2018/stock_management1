@@ -1,0 +1,21 @@
+<!doctype html>
+{% extends 'first_app/basic.html'%}
+    {%block title%}Add Books{% endblock %}
+    {%block css%}{% endblock %}
+{% block body %}
+<div class="mx-auto" style="width: 800px;">
+<div class="w-75 p-3 form-row justify-content-center jumbotron">
+
+
+<form method="POST">{% csrf_token %}
+    <h1>{{title}}</h1>
+    <br>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-success" value="submit">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}
+
+</body>
+</html>

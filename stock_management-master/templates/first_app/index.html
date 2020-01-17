@@ -1,0 +1,141 @@
+<!doctype html>
+{% extends 'first_app/basic.html'%}
+{% load static %}
+
+    {%block title%}Add Books{% endblock %}
+    {%block css%}
+        <link rel="stylesheet" href="{% static 'first_app/css/index.css'%}">
+    {% endblock %}
+{% block body %}
+<header class="header">
+            <div class="logo-box">
+                <a href="#"><img src="{% static 'first_app/image/logo.png'%}" alt="LOGO" class="logo"></a>
+            </div>
+            <div class="text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary-main">Let's Jugaad</span>
+                    <span class="heading-primary-sub">A Perfect Store for every VITian</span>
+                </h1>
+                <a href="#row" class="btn btn-white">Discover Our Products</a>
+            </div>
+        </header>
+
+        <section class="section-tours" id="section-tours">
+            <div class="u-center-text u-margin-bottom-big" id="row">
+                <h2 class="heading-secondary">
+                    Choose your Product Category
+                </h2>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-3">
+                   <div class="card">
+                       <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--1">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1">Books</span>
+                            </h4>
+                            <!-- <div class="card__details">
+                                <ul>
+                                    <li>3 day tours</li>
+                                    <li>Up to 30 people</li>
+                                    <li>2 tour guides</li>
+                                    <li>Sleep in cozy hotels</li>
+                                    <li>Difficulty: easy</li>
+                                </ul>
+                            </div> -->
+                       </div>
+                       <div class="card__side card__side--back card__side--back-1">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">Discover the best collection of</p>
+                                    <p class="card__price-value">Books</p>
+                                </div>
+                                <a href="/first_app/bookview" class="btn btn--white">Shop now!</a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--2">
+                                &nbsp;
+                            </div>
+                            <h6 class="card__heading">
+                                <span class="card__heading-span card__heading-span--2">Electronics</span>
+                            </h6>
+                            <!-- <div class="card__details">
+                                <ul>
+                                    <li>7 day tours</li>
+                                    <li>Up to 40 people</li>
+                                    <li>6 tour guides</li>
+                                    <li>Sleep in provided tents</li>
+                                    <li>Difficulty: medium</li>
+                                </ul>
+                            </div> -->
+
+                        </div>
+                        <div class="card__side card__side--back card__side--back-2">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">Discover the best collection of</p>
+                                    <p class="card__price-value">Electronics</p>
+                                </div>
+                                <a href="/first_app/electronicview" class="btn btn--white">Shop now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--3">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--3">Sports<br>Items</span>
+                            </h4>
+                            <!-- <div class="card__details">
+                                <ul>
+                                    <li>5 day tours</li>
+                                    <li>Up to 15 people</li>
+                                    <li>3 tour guides</li>
+                                    <li>Sleep in provided tents</li>
+                                    <li>Difficulty: hard</li>
+                                </ul>
+                            </div> -->
+
+                        </div>
+                        <div class="card__side card__side--back card__side--back-3">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">Discover the best collection of</p>
+                                    <p class="card__price-value">Sports Items</p>
+                                </div>
+                                <a href="/first_app/sportview" class="btn btn--white">Shop now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-stories">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src="{% static 'first_app/video/background.mp4'%}" type="video/mp4">
+                    <source src="{% static 'first_app/video/background.mp4'%}" type="video/webm">
+                    Your browser is not supported!
+                </video>
+            </div>
+        </section>
+{% endblock %}
+
+</body>
+</html>

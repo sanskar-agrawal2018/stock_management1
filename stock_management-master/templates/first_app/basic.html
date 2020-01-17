@@ -1,0 +1,100 @@
+<!doctype HTML>
+{% load static %}
+<html>
+    <head>
+        <title>{%block title%}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/png" href="{% static 'first_app/image/logo.png'%}">
+        <link rel="stylesheet" href="{% static 'first_app/css/basic.css'%}">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        {% block css %}{% endblock %}
+        
+    </head>
+    <body>
+
+            <div class="navigation">
+                    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                    <label for="navi-toggle" class="navigation__button">
+                        <span class="navigation__icon">&nbsp;</span>
+                    </label>
+                    <div class="navigation__background">&nbsp;</div>
+                    <nav class="navigation__nav">
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
+<!--                            <li class="navigation__item"><a href="#" class="navigation__link">Login</a></li>-->
+                            <li class="navigation__item"><a href="/first_app/bookEnter" class="navigation__link">Sell Books</a></li>
+                            <li class="navigation__item"><a href="/first_app/electronicEnter" class="navigation__link">Sell Electronics</a></li>
+                            <li class="navigation__item"><a href="/first_app/sportEnter" class="navigation__link">Sell Sports Items</a></li>
+                            <li class="navigation__item"><a href="/first_app" class="navigation__link">Shop Now</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            {% if user.is_authenticated %}
+                <div class="loge">
+                <ul class="log">
+                    <li><a href="/first_app/profile/{{user.username}}" class="btn btn-white bor">{{user.username}}</a></li>
+                    <li><a href="/first_app/logout" class="btn btn-white bor fr">Logout</a></li>
+                </ul>
+            </div>
+
+<!--            Hi <a href="/first_app/profile/{{user.username}}">{{ user.username }}!</a>-->
+<!--                <p><a href="/first_app/logout">logout</a></p>-->
+            {% else %}
+<!--                <p>You are not logged in</p>-->
+<!--                <a href="/first_app/login">login</a>-->
+                <div class="loge">
+                <ul class="log">
+                    <li><a href="/first_app/login" class="btn btn-white bor">Login</a></li>
+                    <li><a href="/first_app/registeruser" class="btn btn-white bor fr">Register</a></li>
+                </ul>
+            </div>
+            {% endif %}
+            {% block body %}{%endblock %}
+
+                <footer class="footer">
+                        <div class="row" >
+                            <div class="col-1-of-2">
+                                <div class="footer__navigation">
+                                    <ul class="footer__list">
+                                        <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                                        <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                                        <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
+                                        <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-1-of-2">
+                                <p class="footer__copyright">
+                                    Built by
+                                </p>
+                                <ul class="designers">
+                                    <li class="designer"><a href="https://www.instagram.com/sanskaragrawal1903/" class="footer__link" target="_blank">Sanskar Agrawal</a></li>
+                                    <li class="designer"><a href="https://www.instagram.com/ritesh_somani2211/" class="footer__link" target="_blank">Ritesh Somani</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="r1">
+                            Copyright &copy; by Let's Jugaad Pvt. Ltd. You are 100% allowed to use this webpage for both personal
+                            and commercial use, but NOT to claim it as your own design.
+                        </p>
+                    </footer>
+            </body>
+        </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--Welocme to the home page-->
+<!--{%  if user.isauthenticated %}-->
+<!--<li><a href="logout/">Logout</a></li>-->
+<!--{% else %}-->
+<!--<li><a href="login/">Login</a></li>-->
+<!--{% endif %}-->
+<!--</body>-->
+<!--</html>-->
